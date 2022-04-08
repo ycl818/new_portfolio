@@ -3,24 +3,25 @@ import { motion } from 'framer-motion'
 
 import { images } from '../../constants'
 import './About.scss'
+import { urlFor, client } from '../../client'
 
-const abouts = [
-  {title:'Web Development',description: "I'm a good developer.", imgURL: images.about01},
-  {title:'Web Development',description: "I'm a good developer.", imgURL: images.about02},
-  {title:'Web Development',description: "I'm a good developer.", imgURL: images.about03},
-  {title:'Web Development',description: "I'm a good developer.", imgURL: images.about04},
-];
+
 
 const About = () => {
+
+  const [abouts, setAbouts] = useState([])
+
+  useEffect(() => {
+    const query = '*[_type == "abouts"]';
+
+    client.fetch(query)
+      .then((data) => setAbouts(data))
+  }, [])
+
   return (
     <>
-      <h2 className='head-text'>
-         I know that
-         <span>Good Design</span>
-         <br />
-         <span>Good Business</span>
-      </h2>
-
+      <h2 className='head-text'>I know that <span>Good Design</span><br />means <span>Good Business</span></h2>
+      
       <div className='app__profiles'>
         {abouts.map((about, index) => (
           <motion.div
@@ -30,7 +31,7 @@ const About = () => {
             className="app__profile-item"
             key={about.title + index}
             >
-              <img src={about.imgURL} alt={about.title} />
+              <img src={urlFor(about.imgUrl)} alt={about.title} />
               <h2 className='bold-text' style={{ marginTop: 20 }}>{about.title}</h2>
               <p className='p-text' style={{ marginTop: 10 }}>{about.description}</p>
             </motion.div>
