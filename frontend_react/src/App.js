@@ -7,7 +7,6 @@ import './App.scss'
 const App = () => {
   return (
     <div className='app'>
-    
       <Navbar />
       <Header />
       <About />
@@ -15,7 +14,6 @@ const App = () => {
       <Skills />
       <Testimonial />
       <Footer />
-      {process.env.REACT_APP_SANITY_PROJECT_ID}
     </div>
   )
 }
