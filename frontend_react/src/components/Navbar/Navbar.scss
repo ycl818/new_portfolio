@@ -103,7 +103,7 @@
     top: 0;
     bottom: 0;
     right: 0;
-    z-index: 5;
+    z-index: 10;
 
     padding: 1rem;
 
@@ -116,7 +116,7 @@
     flex-direction: column;
 
     background: url("../../assets/bgWhite.png");
-    border-color: var(--white-color);
+    background-color: var(--white-color);
     background-size: cover;
     background-repeat: repeat;
 

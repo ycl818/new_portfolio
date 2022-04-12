@@ -17,5 +17,5 @@ export default {
                 title:'Desc',
                 type:'string'
             }
-    ]
+    ] 
 }
