@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { images } from '../../constants'
 import { AppWrap } from '../../wrapper'
 import './Header.scss'
-
+import cat from '../../assets/animated-cat.gif'
 
 
 const scaleVariants = {
@@ -27,7 +27,7 @@ const Header = () => {
       >
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
-              <span>👋</span>
+              <span><img className='cat' src={cat} alt="loading ..."/></span>
               <div style={{ marginLeft: 20}}>
                 <p className="p-text">Hello I'm</p>
                 <h2 >Yi-Chien Lee</h2>
