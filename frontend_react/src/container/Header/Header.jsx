@@ -63,6 +63,9 @@ const Header = () => {
             showThumbs={false}
             showStatus={false}
             stopOnHover
+            swipeable
+            useKeyboardArrows
+            swipeScrollTolerance={6}
             className="app__header-carousel"
            
           >
