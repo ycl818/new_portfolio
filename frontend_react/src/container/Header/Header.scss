@@ -203,20 +203,28 @@
 }
 
 .app__header-profile {
-  flex: 1;
-  height: 100%;
+  flex: 1 !important;
+  height: 100% !important;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
 
   img {
-    width: 400px;
-    border-radius: 30px;
+    width: 400px !important;
+    border-radius: 30px !important;
 
     @media screen and (max-width: 1200px) {
-      width: 300px;
+      width: 300px !important;
     }
+  }
+}
+
+.app__header-carousel {
+  width: 500px;
+  cursor: pointer;
+  @media screen and (max-width: 1200px) {
+    width: 300px !important;
   }
 }

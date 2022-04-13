@@ -2,9 +2,12 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { images } from '../../constants'
 import { AppWrap } from '../../wrapper'
-import './Header.scss'
-import cat from '../../assets/animated-cat.gif'
 
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+
+import cat from '../../assets/animated-cat.gif'
+import './Header.scss'
 
 const scaleVariants = {
   whileInView: {
@@ -27,7 +30,7 @@ const Header = () => {
       >
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
-              <span><img className='cat' src={cat} alt="loading ..."/></span>
+              <span><img className='cat' src={cat} alt="loading..."/></span>
               <div style={{ marginLeft: 20}}>
                 <p className="p-text">Hello I'm</p>
                 <h2 >Yi-Chien Lee</h2>
@@ -53,7 +56,25 @@ const Header = () => {
           transition={{ duration: 1, ease: 'easeInOut' }}
           className="app__header-profile"
         >
-          <img src={images.profile} alt="profile_bg" />
+          
+          <Carousel
+            autoPlay
+            infiniteLoop
+            showThumbs={false}
+            showStatus={false}
+            stopOnHover
+            className="app__header-carousel"
+           
+          >
+            <img src={images.profile} />
+            <img src={images.profile2} />
+            <img src={images.profile3} />
+            <img src={images.profile4} />
+            <img src={images.profile5} />
+          </Carousel>
+             
+            
+         
         </motion.div>
       
       {/* <motion.img
