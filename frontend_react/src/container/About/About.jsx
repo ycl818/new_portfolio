@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-import { AppWrap } from '../../wrapper'
+import { AppWrap, MotionWrap } from '../../wrapper'
 import './About.scss'
 import { urlFor, client } from '../../client'
 
@@ -19,7 +19,7 @@ const About = () => {
   }, [])
 
   return (
-    <>
+    <div className='app__about'>
       <h2 className='head-text'>I know that <span>Good Design</span><br />means <span>Good Business</span></h2>
       
       <div className='app__profiles'>
@@ -37,8 +37,9 @@ const About = () => {
             </motion.div>
         ))}
       </div>
-    </>
+    </div>
   )
 }
 
-export default AppWrap(About, 'about')
+export default AppWrap(
+  MotionWrap(About, 'app__about'), 'about', "app__whitebg")

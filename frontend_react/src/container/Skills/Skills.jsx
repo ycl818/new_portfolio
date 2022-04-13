@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import { motion } from 'framer-motion'
 import ReactTooltip from 'react-tooltip'
-import { AppWrap } from '../../wrapper'
+import { AppWrap, MotionWrap } from '../../wrapper'
 import { urlFor, client } from '../../client'
 
 
@@ -33,10 +33,10 @@ const Skills = () => {
 
 
   return (
-    <>
+    <div >
       <h2 className="head-text">Skills & Experiences</h2>
 
-      <div className="app__skills-container">
+      <div className="app__skills app__skills-container">
         <motion.div className="app__skills-list">
           {skills.map((skill) => (
             <motion.div
@@ -99,8 +99,9 @@ const Skills = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default AppWrap(Skills, 'skills')
+export default AppWrap(
+  MotionWrap(Skills, 'app__skills'), 'skills', "app__whitebg")
