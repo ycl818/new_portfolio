@@ -6,13 +6,23 @@ export default{
         {
             name:'year',
             title:'Year',
-            type:'string'
+            type:'string',
+            
         },
         {
             name:'works',
             title:'Works',
             type:'array',
-            of:[{ type:'workExperience'}]
+            of:[{ type:'workExperience'}],
+            
         },
+        
+    ],
+    orderings: [
+        {
+            title:'Year',
+            name:'year',
+            by: [{ field: "year", direction: 'asc' }]
+        }
     ]
 }

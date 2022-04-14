@@ -9,7 +9,7 @@ import './Work.scss'
 const Work = () => {
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState('Main');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Work = () => {
     client.fetch(query).then((data) => {
       
       setWorks(data);
-      setFilterWork(data);
+      setFilterWork(data.filter((work) => work.tags.includes('Main')))
     });
   }, []);
 
@@ -42,7 +42,7 @@ const Work = () => {
       <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
 
       <div className="app__work-filter  app__flex">
-        {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
+        {['Main', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
