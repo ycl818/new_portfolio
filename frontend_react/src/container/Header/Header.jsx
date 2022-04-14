@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <div className=' app__header app__flex'>
       <motion.div
-        whileInView={{ x: [-100, 0], opacity: [0,1] }}
+        whileInView={{ x: [-200, 0], opacity: [0,1] }}
         transition={{ duration: 0.8}}
         className="app__header-info"
       >
@@ -32,14 +32,14 @@ const Header = () => {
           <div className="badge-cmp app__flex">
               <span><img className='cat' src={cat} alt="loading..."/></span>
               <div style={{ marginLeft: 20}}>
-                <p className="p-text">Hello I'm</p>
-                <h2 >Yi-Chien Lee</h2>
+                <p className="p-text ">Hello I'm</p>
+                <h2>Yi-Chien Lee</h2>
               </div>
             </div>  
 
             <div className="tag-cmp app__flex">
-            <p className="p-text">Web Developer</p>
-            <p className="p-text">Fresh</p>
+            <p className="p-text">Welcome to my</p>
+            <p className="p-text">imagination</p>
             </div>
         </div>
       
