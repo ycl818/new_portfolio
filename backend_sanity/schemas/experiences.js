@@ -18,11 +18,5 @@ export default{
         },
         
     ],
-    orderings: [
-        {
-            title:'Year',
-            name:'year',
-            by: [{ field: "year", direction: 'asc' }]
-        }
-    ]
+    
 }

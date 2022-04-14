@@ -15,7 +15,7 @@ const Skills = () => {
 
   
   useEffect(() => {
-    const query = '*[_type == "experiences"]';
+    const query = '*[_type == "experiences"] | order(year desc)';
     const skillsQuery = '*[_type == "skills"]';
 
 
@@ -33,10 +33,11 @@ const Skills = () => {
 
 
   return (
-    <div >
+    <div className='app__skills' >
       <h2 className="head-text">Skills & Experiences</h2>
 
-      <div className="app__skills app__skills-container">
+      <div className="app__skills-container app__flex">
+        
         <motion.div className="app__skills-list">
           {skills.map((skill) => (
             <motion.div
@@ -55,6 +56,8 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
+        
+        
 
          {/* experiences section */}
         <div className="app__skills-exp">
