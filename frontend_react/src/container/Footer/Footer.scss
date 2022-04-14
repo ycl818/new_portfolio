@@ -1,8 +1,11 @@
 .app__footer {
-  flex: 1;
-  width: 100%;
+  flex: 1 !important;
+  width: 100% !important;
   flex-direction: column;
+  background: linear-gradient(to bottom,#f1f4f9,#dff1ff );
 }
+
+
 
 .app__footer-cards {
   width: 60%;

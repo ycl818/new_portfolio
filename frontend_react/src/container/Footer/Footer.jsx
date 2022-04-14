@@ -39,6 +39,11 @@ const Footer = () => {
 
   return (
     <div className='app__footer app__flex'>
+      
+      <div className="color"></div>
+      <div className="color"></div>
+      <div className="color"></div>
+      
       <h2 className='head-text'>Take a coffee & Chat with me</h2>
 
       <div className="app__footer-cards ">
@@ -78,9 +83,11 @@ const Footer = () => {
       <div>
         <h3 className='head-text'>Thank you for getting touch</h3>
       </div> }
+
+      
     </div>
     
   )
 }
 
-export default AppWrap(MotionWrap(Footer, 'app__footer'),'contact')
+export default AppWrap(MotionWrap(Footer, 'app__footer'),'contact', 'app__gradientColor')

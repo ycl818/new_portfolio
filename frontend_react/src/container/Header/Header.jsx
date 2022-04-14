@@ -38,8 +38,14 @@ const Header = () => {
             </div>  
 
             <div className="tag-cmp app__flex">
-            <p className="p-text">Welcome to my</p>
-            <p className="p-text">imagination</p>
+              <motion.div
+                whileInView={{ x: [-100, 0], opacity: [0,1] }}
+                transition={{ duration: 1.5}}
+                className="app__header-info"
+              >
+                <p className="p-text">Welcome to my</p>
+                <p className="p-text">imagination</p>
+               </motion.div>
             </div>
         </div>
       

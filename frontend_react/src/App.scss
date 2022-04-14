@@ -6,6 +6,10 @@
   .app__whitebg {
     background-color: var(--white-color);
   }
+
+  .app__gradientColor {
+    background: linear-gradient(to bottom,#f1f4f9,#dff1ff );
+  }
   
   .app__primarybg {
     background-color: var(--primary-color);
