@@ -108,8 +108,9 @@
     flex-direction: column;
     cursor: pointer;
     padding: 1rem;
-  
-    div {
+    transition: 0.5s;
+   
+    .ins {
       width: 40px;
       height: 40px;
       border-radius: 50%;
@@ -119,38 +120,91 @@
   
       display: flex;
       justify-content: center;
-      align-items: center;
-  
-      transition: all 0.3s ease-in-out;
-  
+      align-items: center;  
       svg {
         width: 15px;
         height: 15px;
         color: var(--gray-color);
       }
-  
       &:hover {
-        background-color: var(--secondary-color);
-        border-color: var(--secondary-color);
-  
+        background-color:#c32aa3;
+        border-color: #c32aa3 ;
+        filter: drop-shadow(0 0 20px #c32aa3);
         svg {
-          color: var(--white-color);
+              color: var(--white-color);
         }
       }
+    } 
+
+    .fb {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--white-color);
+      margin: 0.25rem 0;
+      border: 1px solid var(--lightGray-color);
   
-      @media screen and (min-width: 2000px) {
-        width: 70px;
-        height: 70px;
-  
-        margin: 0.5rem 0;
-  
+      display: flex;
+      justify-content: center;
+      align-items: center;  
+      svg {
+        width: 15px;
+        height: 15px;
+        color: var(--gray-color);
+      }
+      &:hover {
+        background-color:#1877f2;
+        border-color: #1877f2 ;
+        filter: drop-shadow(0 0 20px #1877f2);
         svg {
-          width: 30px;
-          height: 30px;
+              color: var(--white-color);
         }
+      }
+    } 
+
+    
+    .linkdin {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--white-color);
+      margin: 0.25rem 0;
+      border: 1px solid var(--lightGray-color);
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;  
+      svg {
+        width: 15px;
+        height: 15px;
+        color: var(--gray-color);
+      }
+      &:hover {
+        background-color:#1653ee;
+        border-color: #1653ee ;
+        filter: drop-shadow(0 0 20px #1653ee);
+        svg {
+              color: var(--white-color);
+        }
+      }
+    } 
+
+    @media screen and (min-width: 2000px) {
+      width: 70px;
+      height: 70px;
+
+      margin: 0.5rem 0;
+
+      svg {
+        width: 30px;
+        height: 30px;
       }
     }
+
   }
+
+
+
   
   .app__navigation {
     display: flex;
