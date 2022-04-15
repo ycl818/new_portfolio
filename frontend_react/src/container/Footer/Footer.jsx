@@ -61,8 +61,21 @@ const Footer = () => {
 
       
      
+     
       {!isFormSubmitted ?
       <form className='app__footer-form' onSubmit={handleSubmit(onSubmit)}>
+        <div className="color"></div>
+        <div className="color"></div>
+        <div className="color"></div>
+        <div className="box">
+          
+          <div className="square" ></div>
+          <div className="square" ></div>
+          <div className="square" ></div>
+          <div className="square" ></div>
+          <div className="square" ></div>
+          
+        </div>
         <div className="app__flex">
           <input 
             className='p-text'

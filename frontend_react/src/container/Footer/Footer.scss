@@ -1,45 +1,22 @@
 .app__footer {
-  //flex: 1;
+  flex: 1;
   width: 100% ;
-  
+ 
   flex-direction: column;
   overflow: hidden;
   background: linear-gradient(to bottom,#f1f4f9,#dff1ff );
+ 
+  
 }
 
 .container {
   position: relative;
 }
 
-.app__footer .app__flex .color {
-  position: relative !important;
-  filter: blur(150px) !important;
 
-}
 
-.color:nth-child(1){
-  bottom: 100px !important;
-  width: 200px !important;
-  height: 200px !important;
-  background: #ff359b !important;
-  
-}
 
-.color:nth-child(2){
-  bottom: -150px !important;
-  left: 100px !important;
-  width: 500px !important;
-  height: 500px !important;
-  background: #fffd87 !important;
-}
 
-.color:nth-child(3){
-  bottom: 50px;
-  right: 100px;
-  width: 300px;
-  height: 300px;
-  background: #00d2ff;
-}
 
 .app__footer-cards {
   width: 60%;
@@ -103,8 +80,110 @@
   margin: 1rem 2rem;
   position: relative;
   min-height: auto;
-  background: rgba(255,255,255,0.2);
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
   text-align: center;
+  border-radius: 15px;  
+  
+
+  .color {
+     position: absolute !important;
+     filter: blur(200px);
+  
+  }
+  
+  .color:nth-child(1){
+    top: -100px !important;
+    width: 300px !important;
+    height: 300px !important;
+    background: #ff359b !important;
+    
+  }
+  
+  .color:nth-child(2){
+    bottom: -150px !important;
+    left: -200px !important;
+    width: 300px !important;
+    height: 400px !important;
+    background: #fffd87 !important;
+  }
+  
+  .color:nth-child(3){
+    bottom: 50px;
+    left: 400px;
+    width: 300px;
+    height: 300px;
+    background: #00d2ff;
+  }
+
+  .box .square {
+    position: absolute;
+    margin: 0;
+    backdrop-filter: blur(5px);
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    width: 0;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+  }
+  @keyframes animate {
+      0%,100% {
+        transform: translateY(20px);
+      }
+      30% {
+        transform: translateY(-40px);
+      }
+  }
+
+  @keyframes animate1 {
+    0%,100% {
+      transform: translateY(20px);
+    }
+    75% {
+      transform: translateY(-40px);
+    }
+}
+
+@keyframes animate2 {
+  0%,100% {
+    transform: translateX(-60px);
+  }
+  50% {
+    transform: translateX(-40px);
+  }
+}
+  .box .square:nth-child(1) {
+    top: -50px;
+    right: -90px;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    animation: animate 8s linear infinite;
+  }
+  
+  .box .square:nth-child(2) {
+    top: 150px;
+    left: -110px;
+    width: 120px;
+    height: 120px;
+    z-index: 1;
+    animation: animate1 8s linear infinite;
+  }
+
+  .box .square:nth-child(3) {
+    bottom: 15px;
+    right: -60px;
+    width: 80px;
+    height: 80px;
+    z-index: 1;
+    animation: animate2 8s linear infinite;
+  }
 
   div {
     width: 100%;
@@ -123,10 +202,13 @@
       border: none;
       border-radius: 7px;
       background-color: #fff;
-
+      letter-spacing:  1px;
+      background: rgba(255,255,255,0.2);
       font-family: var(--font-base);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       color: var(--secondary-color);
       outline: none;
+      z-index: 2;
     }
 
     .errorText {
@@ -154,7 +236,7 @@
     border-radius: 10px;
     border: none;
     background-color: var(--secondary-color);
-   
+    
     font-weight: 500;
     color: var(--white-color);
     outline: none;
@@ -165,14 +247,38 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #2430af;
+      background-color: #d6c3b4;
     }
   }
 
  
 
   @media screen and (max-width: 768px) {
-    width: 100%;
+    width: 80%;
     margin: 1rem 0;
+  }
+
+  @media screen and (max-width:768px) {
+    width: 80%;
+    .box .square:nth-child(1) {
+      top: 0px;
+      right: -30px;
+      width: 50px;
+      height: 50px;
+    }
+
+    .box .square:nth-child(2) {
+      top: 150px;
+      left: -30px;
+      width: 45px;
+      height: 45px;    
+    }
+
+    .box .square:nth-child(3) {
+      bottom: 15px;
+      right: -60px;
+      width: 60px;
+      height: 60px;
+    }
   }
 }
