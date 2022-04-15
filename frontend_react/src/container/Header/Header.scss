@@ -63,6 +63,41 @@
   align-items: flex-end;
   flex-direction: column;
 
+
+  h2 {
+    position: relative;
+    color: #fff;
+    -webkit-text-stroke: 0.05vw #8a9bde
+  }
+
+  h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #8ae2f0;
+    -webkit-text-stroke: 0.05vw #8a9bde;
+    border-right: 2px solid #8ae2f0;
+    overflow: hidden;
+    animation: textAnimation 6s linear infinite;
+  }
+
+  @keyframes textAnimation {
+    0% {
+      width: 0;
+    }
+    10% {
+      width: 0;
+    }
+    100%{
+      width: 0;
+    }
+    50%,90% {
+      width: 100%;
+    }
+  }
   .badge-cmp,
   .tag-cmp {
     padding: 1rem 2rem;

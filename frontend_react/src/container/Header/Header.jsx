@@ -14,7 +14,8 @@ const scaleVariants = {
     scale: [0, 1],
     opacity: [0, 1],
     transition: {
-      duration: 1,
+      duration: 2,
+      delayChildren:0.5,
       ease: 'easeInOut',
     },
   },
@@ -33,7 +34,7 @@ const Header = () => {
               <span><img className='cat' src={cat} alt="loading..."/></span>
               <div style={{ marginLeft: 20}}>
                 <p className="p-text ">Hello I'm</p>
-                <h2>Yi-Chien Lee</h2>
+                <h2 data-text="Yi-Chien Lee">Yi-Chien Lee</h2>
               </div>
             </div>  
 
@@ -98,6 +99,7 @@ const Header = () => {
       <motion.div
         variants={scaleVariants}
         whileInView={scaleVariants.whileInView}
+        transition={{ duration: 1}}
         className="app__header-circles"
       >
         {[images.cpp, images.javascript, images.python].map((circle, index) => (

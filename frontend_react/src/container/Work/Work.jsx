@@ -38,10 +38,16 @@ const Work = () => {
   };
 
   return (
-    <>
-      <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
+    <app__works>
+      <div className="content">
+        <h2 className="head-text">My Creative Portfolio Section</h2>
+        <h2 className="head-text">My Creative Portfolio Section</h2>
+      </div>
+     
 
-      <div className="app__work-filter  app__flex">
+
+     
+      <div className="app__work-filter">
         {['Main', 'Web App', 'React JS','Others' ,'All'].map((item, index) => (
           <div
             key={index}
@@ -103,7 +109,7 @@ const Work = () => {
           </div>
         ))}
       </motion.div>
-    </>
+    </app__works>
   );
 };
 

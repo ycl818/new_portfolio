@@ -43,13 +43,19 @@ const Footer = () => {
 
     
   
-    <div className='app__footer app__flex'>
+    <div className='app__footer app__flex '>
+      <div className="content2">
+        <h2 className='head-text'>Chat with me</h2>
+        <h2 className='head-text'>Chat with me</h2>
+      </div>
+     
+       
       
-      <h2 className='head-text'>Take a coffee & Chat with me</h2>
+      
 
       <div className="app__footer-cards ">
         <div className="app__footer-card">
-          <img src={images.email} alt="email" />
+          <img src={images.mail} alt="email" />
           <a href="mailto: kevinyichienlee@gmail.com" className='p-text'>kevinyichienlee@gmail.com</a>
         </div>
 

@@ -1,5 +1,5 @@
 .app {
-    //background-color: var(--primary-color);
+    background-color: var(--primary-color);
     font-family: var(--font-base);
   }
   
@@ -34,7 +34,7 @@
     width: 100%;
     flex-direction: column;
     padding: 4rem 2rem;
-  
+    
     @media screen and (max-width: 450px) {
       padding: 4rem 1rem 2rem;
     }

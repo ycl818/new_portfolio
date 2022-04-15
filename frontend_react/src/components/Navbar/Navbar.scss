@@ -63,10 +63,10 @@
     display: inline-block;
     color: rgb(42, 107, 227);
     font-size: 1rem;
-    animation: animate 3s ease-in-out infinite;
+    animation: animateName 3s ease-in-out infinite;
     animation-delay: calc(0.1s * var(--i));
   }
-  @keyframes animate {
+  @keyframes animateName {
     0%{
       transform: translateY(0px);
     }
@@ -118,7 +118,7 @@
       color: var(--gray-color);
       text-decoration: none;
       flex-direction: column;
-
+      font-size: 1rem;
       text-transform: uppercase;
       font-weight: 500;
 

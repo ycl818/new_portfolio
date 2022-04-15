@@ -34,7 +34,11 @@ const Skills = () => {
 
   return (
     <div className='app__skills' >
-      <h2 className="head-text">Skills & Experiences</h2>
+      <div className="content">
+        <h2 className="head-text">Skills & Experiences</h2>
+        <h2 className="head-text">Skills & Experiences</h2>
+      </div>
+      
 
       <div className="app__skills-container app__flex">
         
