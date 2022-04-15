@@ -33,10 +33,11 @@ const Notes = () => {
             >
                <a href={note.noteLink} target="_blank" rel="noreferrer">
                 <img src={urlFor(note.imgUrl)} alt={note.title} />
+                <h2 className='bold-text' style={{ marginTop: 20 }}>{note.title}</h2>
+                <p className='p-text' style={{ marginTop: 10 }}>{note.description}</p>
                </a>
              
-              <h2 className='bold-text' style={{ marginTop: 20 }}>{note.title}</h2>
-              <p className='p-text' style={{ marginTop: 10 }}>{note.description}</p>
+             
             </motion.div>
         ))}
       </div>

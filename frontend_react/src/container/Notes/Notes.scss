@@ -27,6 +27,18 @@
     object-fit: cover;
   }
 
+  a {
+    text-decoration: none;
+  }
+
+  h2, p {
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: rgb(236, 169, 67);
+    }
+  }
+
   @media screen and (min-width: 2000px) {
     width: 370px;
     margin: 2rem 4rem;
