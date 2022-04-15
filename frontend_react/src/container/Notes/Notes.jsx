@@ -2,41 +2,41 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 import { AppWrap, MotionWrap } from '../../wrapper'
-import './About.scss'
+import './Notes.scss'
 import { urlFor, client } from '../../client'
 
 
 
-const About = () => {
+const Notes = () => {
 
-  const [abouts, setAbouts] = useState([])
+  const [notes, setNotes] = useState([])
 
   useEffect(() => {
-    const query = '*[_type == "abouts"]';
+    const query = '*[_type == "notes"]';
 
     client.fetch(query)
-      .then((data) => setAbouts(data))
+      .then((data) => setNotes(data))
   }, [])
 
   return (
-    <div className='app__about'>
+    <div className='app__note'>
       <h2 className='head-text'>The more I<span> Live</span><br />the more I <span>Learn</span></h2>
       
       <div className='app__profiles'>
-        {abouts.map((about, index) => (
+        {notes.map((note, index) => (
           <motion.div
             whileInView={{ opacity: 1}}
             whileHover={{ scale: 1.1}}
             transition={{ duration: 0.5, type: 'tween'}}
             className="app__profile-item"
-            key={about.title + index}
+            key={note.title + index}
             >
-               <a href={about.noteLink} target="_blank" rel="noreferrer">
-                <img src={urlFor(about.imgUrl)} alt={about.title} />
+               <a href={note.noteLink} target="_blank" rel="noreferrer">
+                <img src={urlFor(note.imgUrl)} alt={note.title} />
                </a>
              
-              <h2 className='bold-text' style={{ marginTop: 20 }}>{about.title}</h2>
-              <p className='p-text' style={{ marginTop: 10 }}>{about.description}</p>
+              <h2 className='bold-text' style={{ marginTop: 20 }}>{note.title}</h2>
+              <p className='p-text' style={{ marginTop: 10 }}>{note.description}</p>
             </motion.div>
         ))}
       </div>
@@ -45,4 +45,4 @@ const About = () => {
 }
 
 export default AppWrap(
-  MotionWrap(About, 'app__about'), 'about', "app__whitebg")
+  MotionWrap(Notes, 'app__note'), 'notes')
