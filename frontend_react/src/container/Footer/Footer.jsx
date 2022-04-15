@@ -5,29 +5,29 @@ import { images } from '../../constants'
 import { AppWrap, MotionWrap } from '../../wrapper'
 import { client } from '../../client'
 import './Footer.scss'
+import { useForm } from "react-hook-form";
 
 const Footer = () => {
 
-  const [formData, setFormData] = useState({ name:'', email:'', message:'' })
+ 
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const { name, email, message } = formData
+  const { register, handleSubmit,  formState: { errors }, clearErrors} = useForm({ reValidateMode:'onSubmit'});
+  
+  const errorNameMsg = "Please Enter Your Name ^^"
+  const errorEmailMsg = "Please Enter Your Email Correctly !"
+  const errorText = "Type something to me, thanks!"
 
-  const handleChangeInput = (e) => {
-    const { name, value } = e.target
-
-    setFormData({ ...formData, [name]: value })
-  }
-
-  const handleSubmit = () => {
+  const onSubmit = async data => {
+    console.log(data);
     setLoading(true)
 
     const contact = {
       _type: 'contact',
-      name: name,
-      email: email,
-      message: message,
+      name: data.name,
+      email: data.email,
+      message: data.message,
     }
 
     client.create(contact)
@@ -37,12 +37,13 @@ const Footer = () => {
       })
   }
 
+ 
+
   return (
+
+    
+  
     <div className='app__footer app__flex'>
-      
-      <div className="color"></div>
-      <div className="color"></div>
-      <div className="color"></div>
       
       <h2 className='head-text'>Take a coffee & Chat with me</h2>
 
@@ -58,34 +59,61 @@ const Footer = () => {
         </div>
       </div>
 
+      
+     
       {!isFormSubmitted ?
-      <div className='app__footer-form'>
+      <form className='app__footer-form' onSubmit={handleSubmit(onSubmit)}>
         <div className="app__flex">
-          <input className='p-text' type="text" placeholder='Your Name' name='name' value={name} onChange={handleChangeInput}/>
+          <input 
+            className='p-text'
+            type="text" 
+            placeholder='Your Name' 
+            name='name' 
+            maxLength="10"
+            {...register('name',{ required: errorNameMsg , minLength: {value: 2, message: "Ha! Don't Lie me your name"} })}
+            onClick={ ()=> {clearErrors("name") }}
+          
+          />
+          {errors.name  &&  <p className='errorText'> {errors.name.message}</p>}
+          
         </div>
 
         <div className="app__flex">
-          <input className='p-text' type="email" placeholder='Your Email' name='email' value={email} onChange={handleChangeInput}/>
+          <input 
+            className='p-text' 
+            type="email" 
+            placeholder='Your Email' 
+            name='email' 
+            maxLength="35"
+            onClick={ ()=> {clearErrors("email") }}
+            {...register('email',{ required: errorEmailMsg, pattern: {value:/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/, message: "Invalid Email Address" }})} />
+            {errors.email  &&  <p className='errorText'> {errors.email.message}</p>}
         </div>
 
-        <div >
+        <div className='app__flex'>
           <textarea
             className='p-text'
             placeholder='Your Message'
-            value={message}
             name="message"
-            onChange={handleChangeInput}
+            maxLength="200"
+            {...register('message',{ required: errorText, minLength: {value: 2, message: "At least 5 characters!"} })}
+          
           />
+          {errors.message  &&  <p className='errorText'> {errors.message.message}</p>}
+          
         </div>
-        <button type='button' className='p-text ' onClick={handleSubmit}>{loading ? 'Sending' : 'Send Message' }</button>
-      </div>
+      
+        <button type='submit' className='p-text' >{loading ? 'Sending' : 'Send Message' }</button>
+     
+      </form>
       : 
       <div>
-        <h3 className='head-text'>Thank you for getting touch</h3>
+        <h2 className='head-text'>Thank you for getting touch</h2>
       </div> }
 
       
     </div>
+    
     
   )
 }
