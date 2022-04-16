@@ -152,10 +152,10 @@
 
 @keyframes animate2 {
   0%,100% {
-    transform: translateX(-60px);
+    transform: translateY(-60px);
   }
   50% {
-    transform: translateX(-40px);
+    transform: translateY(0px);
   }
 }
   .box .square:nth-child(1) {
@@ -281,4 +281,9 @@
       height: 60px;
     }
   }
+}
+
+
+.sentMsg{
+  padding: 6rem;
 }

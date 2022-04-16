@@ -88,7 +88,7 @@ const Footer = () => {
             type="text" 
             placeholder='Your Name' 
             name='name' 
-            maxLength="10"
+            maxLength="25"
             {...register('name',{ required: errorNameMsg , minLength: {value: 2, message: "Ha! Don't Lie me your name"} })}
             onClick={ ()=> {clearErrors("name") }}
           
@@ -115,7 +115,7 @@ const Footer = () => {
             placeholder='Your Message'
             name="message"
             maxLength="200"
-            {...register('message',{ required: errorText, minLength: {value: 2, message: "At least 5 characters!"} })}
+            {...register('message',{ required: errorText, minLength: {value: 5, message: "At least 5 characters!"} })}
           
           />
           {errors.message  &&  <p className='errorText'> {errors.message.message}</p>}
@@ -127,7 +127,7 @@ const Footer = () => {
       </form>
       : 
       <div>
-        <h2 className='head-text'>Thank you for getting touch</h2>
+        <h2 className='head-text sentMsg'>Thank you for getting touch</h2>
       </div> }
 
       
