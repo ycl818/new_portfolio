@@ -12,17 +12,18 @@ const Navbar = () => {
     <nav className='app__navbar'>
          <div className="app__navbar-logo">
             <div className="wavy">
-              <span className='i-1' >Y</span>
+              <span className='i-1'>Y</span>
               <span className='i-2'>I</span>
               <span className='i-3'>_</span>
               <span className='i-4'>C</span>
               <span className='i-5'>H</span>
-              <span className='i-6'>E</span>
-              <span className='i-7'>N</span>
-              <span className='i-8'>_</span>
-              <span className='i-9'>L</span>
-              <span className='i-10'>E</span>
+              <span className='i-6'>I</span>
+              <span className='i-7'>E</span>
+              <span className='i-8'>N</span>
+              <span className='i-9'>_</span>
+              <span className='i-10'>L</span>
               <span className='i-11'>E</span>
+              <span className='i-12'>E</span>
             </div>
          </div>
       <ul className="app__navbar-links">
