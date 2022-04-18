@@ -70,9 +70,9 @@ const Footer = () => {
      
       {!isFormSubmitted ?
       <form className='app__footer-form' onSubmit={handleSubmit(onSubmit)}>
+        {/* <div className="color"></div>
         <div className="color"></div>
-        <div className="color"></div>
-        <div className="color"></div>
+        <div className="color"></div> */}
         <div className="box">
           
           <div className="square" ></div>
