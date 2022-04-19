@@ -76,11 +76,11 @@ const Header = () => {
             className="app__header-carousel"
            
           >
-            <img src={images.profile} />
+            <img src={images.profile6} />
             <img src={images.profile2} />
             <img src={images.profile3} />
             <img src={images.profile4} />
-            <img src={images.profile5} />
+            <img src={images.profile} />
           </Carousel>
              
             
