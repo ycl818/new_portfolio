@@ -126,11 +126,18 @@
       font-size: 5rem;
     }
   }
+  @media screen and (min-width: 1200px) {
+    h2 {
+      font-size: 20px;
+    }
+  }
+
 
   @media screen and (max-width: 1200px) {
     justify-content: flex-start;
     align-items: flex-start;
 
+    
     .app__header-info {
       position: relative;
       right: 30px;
