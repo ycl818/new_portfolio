@@ -61,7 +61,7 @@ const Footer = () => {
 
         <div className="app__footer-card">
           <img src={images.mobile} alt="mobile" />
-          <a href="tal: +886 903 133-236" className='p-text'>+886 903-133-236</a>
+          <a href="tal: +886903133236" className='p-text'>+886 903-133-236</a>
         </div>
       </div>
 
@@ -115,6 +115,7 @@ const Footer = () => {
             placeholder='Your Message'
             name="message"
             maxLength="200"
+            onClick={ ()=> {clearErrors("message") }}
             {...register('message',{ required: errorText, minLength: {value: 5, message: "At least 5 characters!"} })}
           
           />

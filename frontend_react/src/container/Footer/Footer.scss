@@ -208,7 +208,7 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       color: var(--secondary-color);
       outline: none;
-      z-index: 2;
+      
     }
 
     .errorText {
@@ -222,6 +222,7 @@
 
     textarea {
       height: 170px;
+     
     }
 
     &:hover {
