@@ -99,7 +99,7 @@ const Header = () => {
       <motion.div
         variants={scaleVariants}
         whileInView={scaleVariants.whileInView}
-        transition={{ duration: 1}}
+        transition={{ duration: 0.5}}
         className="app__header-circles"
       >
         {[images.cpp, images.javascript, images.python].map((circle, index) => (
