@@ -38,8 +38,8 @@ const Work = () => {
   };
 
   return (
-    <app__works>
-      <div className="content">
+    <>
+      <div className="content app__works">
         <h2 className="head-text">My Creative Portfolio Section</h2>
         <h2 className="head-text">My Creative Portfolio Section</h2>
       </div>
@@ -109,7 +109,7 @@ const Work = () => {
           </div>
         ))}
       </motion.div>
-    </app__works>
+    </>
   );
 };
 

@@ -105,7 +105,7 @@ const Footer = () => {
             name='email' 
             maxLength="35"
             onClick={ ()=> {clearErrors("email") }}
-            {...register('email',{ required: errorEmailMsg, pattern: {value:/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/, message: "Invalid Email Address" }})} />
+            {...register('email',{ required: errorEmailMsg, pattern: {value:/^\w+((-\w+)|(\.\w+))*@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/, message: "Invalid Email Address" }})} />
             {errors.email  &&  <p className='errorText'> {errors.email.message}</p>}
         </div>
 
