@@ -149,7 +149,7 @@
   height: 35px;
   border-radius: 50%;
   position: relative;
-
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -179,6 +179,7 @@
     align-items: flex-end;
     flex-direction: column;
 
+   
     background: url("../../assets/bgWhite.png");
     background-color: var(--white-color);
     background-size: cover;
@@ -191,6 +192,7 @@
       height: 35px;
       color: var(--secondary-color);
       margin: 0.5rem 1rem;
+      cursor: pointer;
     }
 
     ul {
@@ -204,24 +206,43 @@
       justify-content: flex-start;
       align-items: flex-start;
       flex-direction: column;
-
+      
 
       li {
         margin: 1rem;
+       
 
         a {
           color: var(--gray-color);
+          position: relative;
+          line-height: 1em;
           text-decoration: none;
           font-size: 1rem;
           text-transform: uppercase;
           font-weight: 500;
-
+          letter-spacing: 2px;
           transition: all 0.3s ease-in-out;
-
+          
           &:hover {
             color: var(--secondary-color);
           }
         }
+        
+      }
+      li:nth-child(1) a {
+        color: rgb(40, 97, 220);
+      }
+      li:nth-child(2) a {
+        color: rgb(237, 137, 37);
+      }
+      li:nth-child(3) a {
+        color: rgb(244, 214, 19);
+      }
+      li:nth-child(4) a {
+        color: rgb(25, 177, 20);
+      }
+      li:nth-child(5) a {
+        color: rgb(181, 10, 163);
       }
     }
 
@@ -234,4 +255,46 @@
     display: none;
   }
 }
+
+
+
+
+
+.app__navbar-menuList  {
+  width: max-content;
+  color: #eee;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.app__navbar-menuList a::before,.app__navbar-menuList a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.app__navbar-menuList a::before{
+  background: rgb(255,255,255);
+  animation: typewriter 0.8s steps(50) 500ms forwards;
+}
+
+
+.app__navbar-menuList a::after {
+  margin-left: 0.4rem;
+  width: 0.1em;
+  background: var(--gray-color);
+  animation: typewriter 0.8s steps(50) 500ms forwards;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
 
