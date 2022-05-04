@@ -231,18 +231,23 @@
       }
       li:nth-child(1) a {
         color: rgb(40, 97, 220);
+        --i:1;
       }
       li:nth-child(2) a {
         color: rgb(237, 137, 37);
+        --i:2;
       }
       li:nth-child(3) a {
         color: rgb(244, 214, 19);
+        --i:3;
       }
       li:nth-child(4) a {
         color: rgb(25, 177, 20);
+        --i:4;
       }
       li:nth-child(5) a {
         color: rgb(181, 10, 163);
+        --i:5;
       }
     }
 
@@ -280,15 +285,17 @@
 
 .app__navbar-menuList a::before{
   background: rgb(255,255,255);
-  animation: typewriter 0.8s steps(50) 500ms forwards;
+  animation: typewriter 0.5s steps(50) 500ms forwards;
+  animation-delay: calc(0.1s * var(--i));
 }
 
 
 .app__navbar-menuList a::after {
   margin-left: 0.4rem;
-  width: 0.1em;
+  width: 0.08em;
   background: var(--gray-color);
-  animation: typewriter 0.8s steps(50) 500ms forwards;
+  animation: typewriter 0.5s steps(50) 500ms forwards;
+  animation-delay: calc(0.1s * var(--i));
 }
 
 @keyframes typewriter {
